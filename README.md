@@ -17,7 +17,11 @@ Configure internal provider and you're ready to check balances:
 const checker = new BalanceChecker("https://mainnet.infura.io/...");
 ```
 
-The `balanceOf()` function uses `async/await` syntax, so the caller ought to use it as well:
+There is one implementation which uses `async/await` syntax and another one which returns a Promise whose result is the balance:
 ```
-let myBalance = await checker.balanceOf(<myAddress>);
+let myBalance = await checker.balanceOfAsync(<myAddress>);
+
+checker.balanceOf(<myAddress>).then((myBalance) => {
+    // Use myBalance within here
+})
 ```
