@@ -1,10 +1,11 @@
 {
   "name": "exc-balance-checker",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "One-function solution for checking an address' balance on Eximchain's ERC 20",
-  "main": "index.js",
+  "main": "dist.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "babel index.js --out-file dist.js"
   },
   "repository": {
     "type": "git",
@@ -18,5 +19,9 @@
   "homepage": "https://github.com/Eximchain/exc-balance-checker#readme",
   "dependencies": {
     "web3": "^1.0.0-beta.36"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.7.0"
   }
 }
