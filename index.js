@@ -1,3 +1,4 @@
+require('@babel/polyfill');
 var Web3 = require('web3');
 
 class EXCChecker {
