@@ -1,6 +1,6 @@
 {
   "name": "exc-balance-checker",
-  "version": "1.0.4",
+  "version": "1.1.0",
   "description": "One-function solution for checking an address' balance on Eximchain's ERC 20",
   "main": "dist.js",
   "scripts": {

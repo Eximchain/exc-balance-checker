@@ -16,12 +16,14 @@ Configure internal provider and you're ready to check balances:
 ```
 const checker = new BalanceChecker("https://mainnet.infura.io/...");
 ```
+The constructor takes an optional second `options` argument.  It is an object which can have keys `timeout`, `user`, `password`, and `headers`, corresponding to the additional arguments which can be passed to the `web3.HttpProvider()`.  This is useful for setting the CORS `Access-Control-Allow-Origin` header of your provider URL, as Firefox and Safari will block requests which do not have that set.
 
-There is one implementation which uses `async/await` syntax and another one which returns a Promise whose result is the balance:
 ```
-let myBalance = await checker.balanceOfAsync(<myAddress>);
-
 checker.balanceOf(<myAddress>).then((myBalance) => {
     // Use myBalance within here
 })
+
+// or
+
+var myBalance = await checker.balanceOf(<myAddress>);
 ```
