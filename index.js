@@ -12,7 +12,7 @@ const mainNetTxExecutors = [
 
 const gammaTxExecutor = 'http://ec2-3-91-44-3.compute-1.amazonaws.com:8080';
 
-const checkEXC = (address, opts) => {
+const checkEXC = (address, opts={}) => {
     const web3 = new Web3(new Web3.providers.HttpProvider(
         opts.useTestNet ? gammaTxExecutor : sample(mainNetTxExecutors), 
         valOrNull(opts, 'timeout'), 

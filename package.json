@@ -1,6 +1,6 @@
 {
   "name": "exc-balance-checker",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "One-function solution for checking an address' balance on Eximchain's main or gamma networks.",
   "main": "dist.js",
   "scripts": {
