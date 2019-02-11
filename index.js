@@ -13,8 +13,13 @@ const mainNetTxExecutors = [
 const gammaTxExecutor = 'http://ec2-3-91-44-3.compute-1.amazonaws.com:8080';
 
 const checkEXC = (address, opts={}) => {
+    if (opts.useTestNet && opts.customEndpoint){
+        throw new Error("Supplied useTestNet and customEndpoint, conflicting options.  Either specify an endpoint or use the built-in ones, but not both.");
+    }
     const web3 = new Web3(new Web3.providers.HttpProvider(
-        opts.useTestNet ? gammaTxExecutor : sample(mainNetTxExecutors), 
+        opts.customEndpoint ? 
+            opts.customEndpoint : opts.useTestNet ?
+                gammaTxExecutor : sample(mainNetTxExecutors), 
         valOrNull(opts, 'timeout'), 
         valOrNull(opts, 'user'), 
         valOrNull(opts, 'password'), 

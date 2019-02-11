@@ -22,8 +22,9 @@ The options object has a few possible keys:
 | Key Name | Default Value | Usage |
 | -- | -- | -- |
 | `useTestNet` | `false` | Boolean, set true to query test net instead of main net. |
+| `customEndpoint` | `undefined` | Set if you want to plug in your own node address.  Cannot be specified along with `useTestNet`. |
 | `requireChecksum` | `false` | Web3 typically requires that addresses follow checksum capitalization, but we disable that check.  Set to true to re-enable. |
-| `user` | null | `user` argument for `web3.HttpProvider`. |
-| `timeout` | null | `timeout` argument for `web3.HttpProvider`. |
-| `password` | null | `password` argument for `web3.HttpProvider`. |
-| `headers` | null | `headers` argument for `web3.HttpProvider`.  Useful for setting the CORS `Access-Control-Allow-Origin` header, as Firefox and Safari will block requests which do not have that set. |
+| `user` | `null` | `user` argument for `web3.HttpProvider`. |
+| `timeout` | `null` | `timeout` argument for `web3.HttpProvider`. |
+| `password` | `null` | `password` argument for `web3.HttpProvider`. |
+| `headers` | `null` | `headers` argument for `web3.HttpProvider`.  Useful for setting the CORS `Access-Control-Allow-Origin` header, as Firefox and Safari will block requests which do not have that set. |

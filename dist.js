@@ -20,7 +20,12 @@ var gammaTxExecutor = 'http://ec2-3-91-44-3.compute-1.amazonaws.com:8080';
 
 var checkEXC = function checkEXC(address) {
   var opts = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
-  var web3 = new Web3(new Web3.providers.HttpProvider(opts.useTestNet ? gammaTxExecutor : sample(mainNetTxExecutors), valOrNull(opts, 'timeout'), valOrNull(opts, 'user'), valOrNull(opts, 'password'), valOrNull(opts, 'headers')));
+
+  if (opts.useTestNet && opts.customEndpoint) {
+    throw new Error("Supplied useTestNet and customEndpoint, conflicting options.  Either specify an endpoint or use the built-in ones, but not both.");
+  }
+
+  var web3 = new Web3(new Web3.providers.HttpProvider(opts.customEndpoint ? opts.customEndpoint : opts.useTestNet ? gammaTxExecutor : sample(mainNetTxExecutors), valOrNull(opts, 'timeout'), valOrNull(opts, 'user'), valOrNull(opts, 'password'), valOrNull(opts, 'headers')));
   return web3.eth.getBalance(opts.requireChecksum ? address : address.toLowerCase());
 };
 
