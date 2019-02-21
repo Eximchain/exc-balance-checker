@@ -5,12 +5,12 @@ var sample = require('lodash.sample');
 const valOrNull = (obj, name) => { return obj[name] ? obj[name] : null }
 
 const mainNetTxExecutors = [
-    'http://ec2-3-80-165-200.compute-1.amazonaws.com:8080',
-    'http://ec2-34-219-140-122.us-west-2.compute.amazonaws.com:8080',
-    'http://ec2-54-255-248-144.ap-southeast-1.compute.amazonaws.com:8080'
+    'https://tx-executor-us-east.eximchain.com',
+    'https://tx-executor-us-west.eximchain.com',
+    'https://tx-executor-singapore.eximchain.com'
 ]
 
-const gammaTxExecutor = 'http://ec2-3-91-44-3.compute-1.amazonaws.com:8080';
+const gammaTxExecutor = 'https://gamma-tx-executor-us-east.eximchain.com';
 
 const checkEXC = (address, opts={}) => {
     if (opts.useTestNet && opts.customEndpoint){
