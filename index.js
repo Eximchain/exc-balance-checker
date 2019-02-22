@@ -10,7 +10,7 @@ const mainNetTxExecutors = [
     'https://tx-executor-singapore.eximchain.com'
 ]
 
-const gammaTxExecutor = 'https://gamma-tx-executor-us-east.eximchain.com';
+const gammaTxExecutor = 'https://gamma-tx-executor-us-east.eximchain-dev.com';
 
 const checkEXC = (address, opts={}) => {
     if (opts.useTestNet && opts.customEndpoint){
