@@ -1,11 +1,11 @@
 {
   "name": "exc-balance-checker",
-  "version": "2.1.2",
+  "version": "2.2.0",
   "description": "One-function solution for checking an address' balance on Eximchain's main or gamma networks.",
-  "main": "dist.js",
+  "main": "build/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "babel index.js --out-file dist.js --presets=@babel/env",
+    "build": "tsc --esModuleInterop index.ts --outDir ./build",
     "prepublishOnly": "npm run build"
   },
   "repository": {
@@ -20,12 +20,14 @@
   "homepage": "https://github.com/Eximchain/exc-balance-checker#readme",
   "dependencies": {
     "@babel/polyfill": "^7.0.0",
+    "@types/node": "^11.13.4",
     "lodash.sample": "^4.2.1",
     "web3": "1.0.0-beta.34"
   },
   "devDependencies": {
     "@babel/cli": "^7.1.0",
     "@babel/core": "^7.1.0",
-    "@babel/preset-env": "^7.1.0"
+    "@babel/preset-env": "^7.1.0",
+    "typescript": "^3.4.3"
   }
 }
