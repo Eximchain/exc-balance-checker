@@ -1,5 +1,5 @@
 # exc-balance-checker
-Code for checking an address' balance on Eximchain's main and test networks.
+Tiny one-function library for checking an address' balance on Eximchain's main and test networks.  Ships with Typescript bindings built-in.
 
 ## Usage
 Install via:
@@ -10,6 +10,10 @@ npm install --save exc-balance-checker
 Import the checker function:
 ```
 import excChecker from 'exc-balance-checker';
+
+// OR
+
+const excChecker = require('exc-balance-checker').default;
 ```
 
 The balance checker returns a Promise and comes with URLs to our Community Nodes already baked in, so you're ready to go:
